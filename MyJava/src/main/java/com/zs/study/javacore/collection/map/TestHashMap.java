@@ -25,6 +25,7 @@ public class TestHashMap {
         map.put("D","love");
         map.put("E","Java");
 
+        System.out.println("map 包含Key A: " + !map.containsKey("F"));
         // for each map.entrySet() 结构清晰
         for (Map.Entry<String, String> entry : map.entrySet()) {
             print(entry);

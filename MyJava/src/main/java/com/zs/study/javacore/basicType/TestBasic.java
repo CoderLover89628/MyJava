@@ -21,6 +21,14 @@ public class TestBasic {
 
         StrToLong();
 
+        String sss = "1";
+        float as = Float.parseFloat(sss);
+        as += 2;
+        if (as - 1 >= 0) {
+            System.out.println("big");
+        }
+        System.out.println(as);
+
     }
 
     /**
