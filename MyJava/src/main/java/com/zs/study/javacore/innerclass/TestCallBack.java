@@ -49,6 +49,8 @@ class Callee2 extends MyIncrement{
         public void increment()
         {
             Callee2.this.increment();
+            Callee2.this.i = 100;
+            Callee2.this.increment();
         }
     }
 
