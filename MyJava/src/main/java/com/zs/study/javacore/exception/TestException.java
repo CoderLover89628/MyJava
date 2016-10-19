@@ -8,13 +8,22 @@ public class TestException {
     public static void main(String[] args)
     {
         try {
-            String msg = getMesg();
-            System.out.println("msg is:" + msg);
+//            String msg = getMesg();
+//            System.out.println("msg is:" + msg);
+            String message = getMsg();
+            System.out.println("message is :" + message);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
+    private static String getMsg() throws Exception {
+        String a = "hello";
+        if (true) {
+            throw new Exception("error");
+        }
+        return a;
+    }
     /**
      * 测试当出现异常的时候，返回值问题
      * 结论：最后如果有return则不会抛出异常

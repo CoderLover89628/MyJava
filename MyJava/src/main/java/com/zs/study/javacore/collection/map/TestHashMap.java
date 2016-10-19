@@ -49,6 +49,28 @@ public class TestHashMap {
         for (String key : map.keySet()) {
             System.out.println("key is : " + key + ",value is :" + map.get(key));
         }
+
+        System.out.println("================================");
+        Map<String,String> aMap = new HashMap<String, String>();
+        aMap.put("name","zhangsan");
+        aMap.put("age","24");
+        Map<String,String> bMap = new HashMap<String, String>();
+        bMap.put("name","lisi");
+        bMap.put("age","25");
+        Map<String,String> cMap = new HashMap<String, String>();
+        cMap.putAll(combineHashMap(aMap,bMap));
+        for (Iterator iter = cMap.keySet().iterator(); iter.hasNext();) {
+            String key = (String) iter.next();
+            System.out.println(key +  "<---> " + cMap.get(key));
+        }
+    }
+
+    private static Map<String,String> combineHashMap(Map<String, String> aMap, Map<String, String> bMap)
+    {
+        Map<String,String> map = new HashMap<String, String>();
+        map.putAll(aMap);
+        map.putAll(bMap);
+        return map;
     }
 
     /**
