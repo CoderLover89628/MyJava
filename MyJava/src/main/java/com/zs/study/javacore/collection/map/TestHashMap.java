@@ -1,8 +1,6 @@
 package com.zs.study.javacore.collection.map;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by zhangsheng1 on 2016/7/15.
@@ -62,6 +60,36 @@ public class TestHashMap {
         for (Iterator iter = cMap.keySet().iterator(); iter.hasNext();) {
             String key = (String) iter.next();
             System.out.println(key +  "<---> " + cMap.get(key));
+        }
+
+        Set<String> aSet = new HashSet<String>();
+        aSet.add("a");
+        aSet.add("b");
+
+        Set<String> bSet = new HashSet<String>();
+        bSet.add("a");
+        bSet.add("c");
+        Map<String,Map<String,Set<String>>> testMap = new HashMap<String, Map<String, Set<String>>>();
+        Map<String,Set<String>> sMap = new HashMap<String, Set<String>>();
+        sMap.put("a",aSet);
+        testMap.put("aa",sMap);
+
+        Map<String,Set<String>> bbMap = testMap.get("aa");
+        for (Map.Entry<String,Set<String>> entry : bbMap.entrySet()) {
+            if ("a".equals(entry.getKey())) {
+                Set<String> names = entry.getValue();
+                names.addAll(bSet);
+//                bbMap.put(entry.getKey(),names);
+            }
+        }
+
+        for (Map.Entry<String,Set<String>> entry : bbMap.entrySet()) {
+            Set<String> names = entry.getValue();
+            Iterator<String> its = names.iterator();
+            while (its.hasNext()) {
+                String na = its.next();
+                System.out.println("na is:" + na);
+            }
         }
     }
 

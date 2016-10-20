@@ -1,8 +1,6 @@
 package com.zs.study.javacore.collection.list;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by zhangsheng1 on 2016/7/18.
@@ -24,12 +22,49 @@ public class TestLinkedList {
         linkedListTwo.add("c");
         linkedListTwo.add("i");
 
-        print("linkOne",linkedListOne);
-        sortLinkedList(linkedListOne);// 排序
-        System.out.println("============");
-        print("linkOne",linkedListOne);
+//        print("linkOne",linkedListOne);
+//        sortLinkedList(linkedListOne);// 排序
+//        System.out.println("============");
+//        print("linkOne",linkedListOne);
 
-        checkTwoLinkedListhasSameValue(linkedListOne,linkedListTwo);
+//        checkTwoLinkedListhasSameValue(linkedListOne,linkedListTwo);// 合并
+
+        // 取集合第一个元素的集中方式
+        // 前两个如果list为空，则抛出NoSuchElementException异常
+        // peek()方法如果list为空，则返回null
+        System.out.println("the first element is:" + linkedListOne.getFirst());
+        System.out.println("the first element is:" + linkedListOne.element());
+        System.out.println("the last element is: " + linkedListOne.peek());
+
+        // 取list最后一个元素
+        System.out.println("the last element is: " + linkedListOne.getLast());
+
+        // 删除list第一个元素，并返回该值
+        // remove(),removeFirst()如果list为空的时候,抛出NoSuchElementException异常
+        // poll()在list为空的时候,返回null
+        System.out.println("remove the first element is:" + linkedListOne.remove());
+        System.out.println("remove the first element is:" + linkedListOne.removeFirst());
+        System.out.println("remove the first element is:" + linkedListOne.poll());
+
+        System.out.println("test hashMap");
+        Map<String,String> aMap = new HashMap<String, String>();
+        aMap.put("a","hello");
+        aMap.put("b","hello");
+
+        if (aMap.containsKey("b")) {
+            System.out.println("b is:" + aMap.get("b"));
+        } else {
+            System.out.println("aMap is no b");
+        }
+
+
+
+
+
+
+//        for (String value : linkedListOne) {
+//
+//        }
     }
 
     /**
