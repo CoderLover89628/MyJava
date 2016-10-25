@@ -1,6 +1,9 @@
 package com.zs.study.javacore.string;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by zhangsheng1 on 2016/7/15.
  *
@@ -24,6 +27,13 @@ public class TestString {
         System.out.println(msssg.trim().split(",").length);
         for (String s1 : msssg.trim().split(",")) {
             System.out.println("hello");
+        }
+
+        String msgs = "DataSourceInitHandleServiceImpl --> initUserReportDataSourceAuthority: 报表id:2004 报表名称:jd.com-摘要报告 下sql解析可能有误, 无法解析出表!";
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher("abd123cde");
+        while (m.find()) {
+            System.out.println("m is:" + m.group());
         }
     }
 
